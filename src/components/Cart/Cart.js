@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+
 import CartItem from '../CartItem/CartItem';
 import Choosed from '../Choosed/Choosed';
-
+import './Cart.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Cart = ({cart, clear, chooseBtn, choose}) => {
    
      
     return (
-        <div>
+        <div className="cart">
             <h5>Selected Items:</h5>
             <div className="items">
 

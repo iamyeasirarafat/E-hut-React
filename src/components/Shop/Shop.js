@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
+import './Shop.css'
 
 const Shop = () => {
     const [products, setProducts] = useState([])
@@ -33,7 +34,7 @@ const Shop = () => {
     
     const chooseBtn = (items) => {
         console.log(items);
-        const number = Math.round(Math.random() * items.length);
+        const number = Math.floor(Math.random() * items.length);
         console.log(number);
         const choosed =  items[number];
         console.log(choosed);
