@@ -5,6 +5,8 @@ import Product from '../Product/Product';
 const Shop = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
+    const [choose, setChoose] = useState([])
+   
     
    useEffect( () => {
         fetch('fakeData.json')
@@ -25,10 +27,21 @@ const Shop = () => {
     const clear = [];
     const clearBtnHandler =() => {
         setCart(clear)
+        setChoose(clear)
     }
     // choose on for me button Handler
     
-
+    const chooseBtn = (items) => {
+        console.log(items);
+        const number = Math.round(Math.random() * items.length);
+        console.log(number);
+        const choosed =  items[number];
+        console.log(choosed);
+        setChoose(choosed);
+        
+         
+    }
+    
     
     return (
         <div className="shop container">
@@ -42,7 +55,7 @@ const Shop = () => {
                  </div>
                  </div>  
              <div className="col-lg-3 col-md-4 col-6 cart">
-                 <Cart clear={clearBtnHandler} cart={cart}></Cart>
+                 <Cart choose = {choose} chooseBtn = {chooseBtn}  clear={clearBtnHandler} cart={cart}></Cart>
              </div>
                </div> 
             

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CartItem from '../CartItem/CartItem';
+import Choosed from '../Choosed/Choosed';
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Cart = ({cart, clear}) => {
-    
+const Cart = ({cart, clear, chooseBtn, choose}) => {
+   
+     
     return (
         <div>
             <h5>Selected Items:</h5>
@@ -12,10 +15,14 @@ const Cart = ({cart, clear}) => {
                 {
                     cart.map((item) => <CartItem key={item.id} item = {item}></CartItem> )
                 }
-               <button className="btn btn-info">Choose one for me</button>
+               <button onClick={() =>{chooseBtn(cart)}} className="btn btn-info">Choose one for me</button>
                <button onClick={clear} className="btn m-3 btn-danger">Clear all </button>
             </div>
-
+            
+               <div>
+                  <Choosed item = {choose} ></Choosed>
+                </div>
+            
             
         </div>
     );
