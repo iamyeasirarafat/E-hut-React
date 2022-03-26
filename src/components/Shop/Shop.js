@@ -20,6 +20,15 @@ const Shop = () => {
         }
         
     }
+
+    // clear all button handler
+    const clear = [];
+    const clearBtnHandler =() => {
+        setCart(clear)
+    }
+    // choose on for me button Handler
+    
+
     
     return (
         <div className="shop container">
@@ -33,7 +42,7 @@ const Shop = () => {
                  </div>
                  </div>  
              <div className="col-lg-3 col-md-4 col-6 cart">
-                 <Cart cart={cart}></Cart>
+                 <Cart clear={clearBtnHandler} cart={cart}></Cart>
              </div>
                </div> 
             
