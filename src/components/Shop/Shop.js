@@ -5,14 +5,22 @@ import Product from '../Product/Product';
 const Shop = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
-    useEffect( () => {
+    
+   useEffect( () => {
         fetch('fakeData.json')
         .then(response => response.json())
         .then(data => setProducts(data))
     },[]);
-    const cartHandler =() => {
-        console.log('button clicked');
+    const cartHandler =(product) => {
+        const newCart =[...cart, product]
+        if(cart.length === 4){
+            alert('Cant add more then 4 item')
+        }else{
+           setCart(newCart)
+        }
+        
     }
+    
     return (
         <div className="shop container">
             <h2 className="text-center mb-5 mt-5">Choose your Watch</h2>
@@ -25,7 +33,7 @@ const Shop = () => {
                  </div>
                  </div>  
              <div className="col-lg-3 col-md-4 col-6 cart">
-                 <Cart></Cart>
+                 <Cart cart={cart}></Cart>
              </div>
                </div> 
             

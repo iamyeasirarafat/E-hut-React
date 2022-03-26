@@ -1,0 +1,18 @@
+.cart-item{
+    margin-top: 20px;
+}
+.cart-item img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    margin-right: 15px;
+}
+.cart-item h6{
+    margin-top:10px;
+    margin-right: 7px;
+}
+.cart-item button{
+    border: none;
+    padding: 10px;
+    border-radius:50%
+}
